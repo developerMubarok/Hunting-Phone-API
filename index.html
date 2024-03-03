@@ -11,22 +11,50 @@
 </head>
 <body>
     <header>
-        <h2>Hunting phone</h2>
+        <h2 class="text-6xl text-center font-semibold ">Hunting phone</h2>
     </header>
     <main class="container mx-auto mt-8">
         <section class="bg-gray-100 p-4 m-4">
-            <input type="text" placeholder="search..." class="input input-bordered w-full max-w-xs" />
-            <button class="btn btn-accent">Search</button>
+            <input id="search-field" type="text" placeholder="search..." class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearch()" class="btn btn-outline btn-secondary">Search</button>
+            <!-- another search field -->
+            <!-- <input type="text" id="search-field2" placeholder="search here" class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearch2()" class="btn btn-outline btn-secondary">Secondary</button> -->
         </section>   
-
-
+       
         <section>
+            <!-- spinner or loader -->
+            <div id="loading-spinner" class="text-center my-40 hidden">
+         <span class="loading loading-spinner text-info"></span>
+
+            </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
+            </div>
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden text-center my-8">
+                <button onclick="handleShowAll()" class="btn btn-outline btn-primary">Show All</button>
             </div>
         </section>
+        <!-- show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+
+      <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+    <h3 id="show-details-phone-name" class="font-bold text-3xl"></h3>
+    <div id="show-detail-container">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
     </main>
     <footer></footer>
     <script src="./js/style.js"></script>
 </body>
 </html>
+
